@@ -11,6 +11,8 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
+    // 회원가입을 이런식으로 만들면 안된다.
+    // 편의상 만들어 놓은 것.
     @GetMapping("/account/{role}/{username}/{password}")
     public Account createAccount(@ModelAttribute Account account) {
         return accountService.createNew(account);

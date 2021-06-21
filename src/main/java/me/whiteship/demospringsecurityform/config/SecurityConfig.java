@@ -62,10 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/", "/info", "/account/**", "/signup").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
                 .mvcMatchers("/user").hasRole("USER")
-                .anyRequest().authenticated()
+                .anyRequest().authenticated() // 그 밖에 모든 요청들은 인증해야 함
                 .expressionHandler(expressionHandler());
 
-        http.formLogin()
+        http.formLogin() // 인증이 필요할 때 리다이렉팅하는 곳
                 .loginPage("/login")
                 .permitAll();
 

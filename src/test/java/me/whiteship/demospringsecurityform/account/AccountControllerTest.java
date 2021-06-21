@@ -36,7 +36,7 @@ public class AccountControllerTest {
     @WithAnonymousUser
     public void index_anonymous() throws Exception {
         mockMvc.perform(get("/"))
-                .andDo(print())
+                .andDo(print()) // 응답으로 어떤 뷰가 나가는지 프린트
                 .andExpect(status().isOk());
     }
 

@@ -27,7 +27,7 @@ public class AccountService implements UserDetailsService {
     }
 
     public Account createNew(Account account) {
-        account.encodePassword(passwordEncoder);
+        account.encodePassword(passwordEncoder); // 스프링 시큐리티가 원하는 "{noop}" 형식을 지켜주기 위한 메소드
         return this.accountRepository.save(account);
     }
 }
