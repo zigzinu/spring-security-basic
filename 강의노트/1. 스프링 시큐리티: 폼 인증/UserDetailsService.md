@@ -1,6 +1,7 @@
 # UserDetailsService
 
 - 스프링 시큐리티에서 authentication 을 관리할 때, 인메모리가 아닌 DAO (데이터베이스)를 통해 사용자 정보를 가져올 때 사용
+- 인증을 하는 객체가 아니다
 - 어떤 Database 타입에 구현될 것인지는 자유다.
   - 임의의 DAO 구현체: `@Autowired AccountRepository accountRepository`
 
