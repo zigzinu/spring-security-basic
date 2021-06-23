@@ -27,4 +27,12 @@
 ![image](https://user-images.githubusercontent.com/83999058/123046509-27be3a00-d437-11eb-940b-4aafbb232c5c.png)
 
 
-- 핸들러에서 호출한
+- 핸들러에서 호출한 Asyn 함수에서는 SecurityContext가 공유가 되지 않아서 nullPointException 발생.
+
+## Async 메소드에서 Security Context 접근 허용하기
+
+**SecurityConfig.java**
+```
+        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+```
+- 현재 스레드에서 하위 스레드를 생성해도 SecurityContext가 공유가 된다.

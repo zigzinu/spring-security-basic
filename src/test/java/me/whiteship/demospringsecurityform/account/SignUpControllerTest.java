@@ -27,10 +27,10 @@ public class SignUpControllerTest {
 
     @Test
     public void signUpForm() throws Exception {
-        mockMvc.perform(get("/signup"))
-                .andDo(print())
+        mockMvc.perform(get("/signup")) // 접속이 가능해야 함
+                .andDo(print()) // 눈으로 확인하기 위함
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("_csrf")));
+                .andExpect(content().string(containsString("_csrf"))); // 문자열에 csrf 존재
     }
 
     @Test
@@ -38,9 +38,9 @@ public class SignUpControllerTest {
         mockMvc.perform(post("/signup")
                 .param("username", "keesun")
                 .param("password", "123")
-                .with(csrf()))
+                .with(csrf())) // 여기까지 perform 안에다가 줘야 한다 요청을
                 .andDo(print())
-                .andExpect(status().is3xxRedirection());
+                .andExpect(status().is3xxRedirection()); // 우리가 기대하는건 Redirect
     }
 
 }
