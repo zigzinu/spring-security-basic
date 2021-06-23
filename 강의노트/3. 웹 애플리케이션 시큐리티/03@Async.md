@@ -23,4 +23,8 @@
   - 쓰레드 풀에 대한 설정도 해야한다.
 
 **결과**
+
+![image](https://user-images.githubusercontent.com/83999058/123046509-27be3a00-d437-11eb-940b-4aafbb232c5c.png)
+
+
 - 핸들러에서 호출한
